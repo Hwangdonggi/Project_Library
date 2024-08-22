@@ -1,11 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Routing from './routing/Routing';
 
 function App() {
   return (
     <div className="App">
-      <p className='h-96'> hello</p>
+      <Routing/>
      
     </div>
   );
