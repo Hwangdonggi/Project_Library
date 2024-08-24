@@ -1,12 +1,16 @@
-import { BrowserRouter, Router, Routes } from "react-router-dom"
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Login from "../login/Login";
+import Search from "../search/Search";
 
 const Routing = () => {
+  return (
     <BrowserRouter>
-        <Routes>
-             {/* <Route path ="/login" ></Route>
-            <Route path= "/membership"></Route>
-            <Route path = "/search"></Route> */}
-        </Routes>
-    </BrowserRouter>    
-}
+      <Routes>
+        <Route path="/" element={<Login />} />
+        {/* <Route path="/membership" element={<Membership/>}></Route> */}
+        <Route path="/search" element={<Search />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 export default Routing;
