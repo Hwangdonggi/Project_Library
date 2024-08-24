@@ -30,3 +30,20 @@ const DATABASE = {
     ENROLLMENT: {},
   },
 };
+
+const executeQuery = async (query, params = []) => {
+  try {
+    const connection = await mysql.createConnection(DATABASE.CONFIG);
+    const [results] = await connection.query(query, params);
+    await connection.end();
+    return results;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const getBooks = async () => await executeQuery(DATABASE.QUERY.TUTOR.FINDALL);
+
+app.get("/api/book", async (req, res) => {
+  res.json(await getBooks());
+});
