@@ -21,7 +21,6 @@ const Routing = ({ book }: BooksType) => {
         <Route path="/" element={<Login />} />
         {/* <Route path="/membership" element={<Membership/>}></Route> */}
         <Route path="/search" element={<Search />} />
-        <Route path="/api/book" />
       </Routes>
     </BrowserRouter>
   );
